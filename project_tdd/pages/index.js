@@ -5,6 +5,7 @@ export default function Home() {
   const [allblogposts, setAllblogposts] = useState([]);
   useEffect(() => {
     fetchData();
+    fetchData1();
   }, []);
   const fetchData = async () => {
     const res = await fetch("https://dev.to/api/articles?per_page=9");
@@ -12,9 +13,6 @@ export default function Home() {
     setAllblogposts(data);
   };
   const [recentblogposts, setRecentblogposts] = useState([]);
-  useEffect(() => {
-    fetchData1();
-  }, []);
   const fetchData1 = async () => {
     const res1 = await fetch("https://dev.to/api/articles/latest?per_page=4");
     const data1 = await res1.json();
@@ -28,10 +26,16 @@ export default function Home() {
           <h2 className="text-[24px] font-bold mx-8 mb-4 mt-[100px]">
             Recent blog posts
           </h2>
-          <div className="flex flex-col">
-            <div className="flex px-8 gap-8 item">
-              <div>
-                <img src={recentblogposts[0].cover_image} />
+          <div className="flex flex-col ">
+            <div className="flex px-8 gap-8 w-full overflow-hidden">
+              <div className="w-[50%] ">
+                <img
+                  src={
+                    recentblogposts[0].cover_image
+                      ? recentblogposts[0].cover_image
+                      : "/default.avif"
+                  }
+                />
                 <p className="mt-8 text-[#97989F]">
                   {recentblogposts[0].created_at}
                 </p>
@@ -42,11 +46,15 @@ export default function Home() {
                   {recentblogposts[0].description}
                 </p>
               </div>
-              <div>
-                <div className="flex mb-8 gap-3">
+              <div className="w-[50%]">
+                <div className="flex mb-8 gap-3 h-[50%] ">
                   <img
-                    src={recentblogposts[1].cover_image}
-                    className="w-[320px] h-[200px]"
+                    src={
+                      recentblogposts[1].cover_image
+                        ? recentblogposts[1].cover_image
+                        : "/default.avif"
+                    }
+                    className="object-cover w-[50%] "
                   />
                   <div>
                     <p className="text-[#97989F]">
@@ -60,10 +68,10 @@ export default function Home() {
                     </p>
                   </div>
                 </div>
-                <div className="flex gap-3">
+                <div className="flex gap-3 h-[50%]">
                   <img
                     src={recentblogposts[2].cover_image}
-                    className="w-[320px] h-[200px]"
+                    className="object-cover w-[50%] "
                   />
                   <div>
                     <p className="text-[#97989F]">
@@ -81,7 +89,7 @@ export default function Home() {
             </div>
             <div className="flex gap-8 mx-8 my-[30px] mt-[100px] ">
               <img
-                src={recentblogposts[2].cover_image}
+                src={recentblogposts[3].cover_image}
                 className="h-[246px] w-[592px]"
               />
               <div>

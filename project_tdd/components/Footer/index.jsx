@@ -1,7 +1,63 @@
 import React from "react";
+import Link from "next/link";
+import { BsFacebook } from "react-icons/bs";
+import { BsInstagram } from "react-icons/bs";
+import { BsTwitter } from "react-icons/bs";
+import { BsLinkedin } from "react-icons/bs";
 
 const Footer = () => {
-  return <div>Footer</div>;
+  return (
+    <div className="pt-[64px] px-[352px] flex flex-col items-start text-base text-[#3B3C4A] bg-[#F6F6F7] mt-[100px]">
+      <div className="flex gap-5">
+        <div className="w-[289px]">
+          <h2 className="font-semibold text-black">About</h2>
+          <p className="mb-6 mt-3">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam
+          </p>
+          <p className="flex gap-1">
+            <span className="font-semibold text-black">Email: </span>
+            info@jstemplate.net
+          </p>
+          <p className="flex gap-1">
+            <span className="font-semibold text-black">Phone: </span> 880 123
+            456 789
+          </p>
+        </div>
+        <div className="w-[521px]  flex justify-center">
+          <div className="flex flex-col gap-2">
+            <Link href="/">Home</Link>
+            <Link href="/blog">Blog</Link>
+            <Link href="/contact">Contact</Link>
+          </div>
+        </div>
+        <div className="flex gap-7">
+          <BsFacebook />
+          <BsInstagram />
+          <BsTwitter />
+          <BsLinkedin />
+        </div>
+      </div>
+      <p className="w-full bg-[#E8E8EA] h-[2px] mt-[25px]"></p>
+      <div className="flex items-center py-9 gap-16 w-full">
+        <div className="flex gap-2 font-normal w-[350px]">
+          <img src="/logomini.svg" />
+          <div>
+            <h3 className="flex">
+              Meta<span className="font-bold">Blog</span>
+            </h3>
+            <h3>© All Rights Reserved.</h3>
+          </div>
+        </div>
+        <div className="flex gap-8 w-full justify-end">
+          <p>Terms of Use</p>
+          <p>Privacy Policy</p>
+          <p>Cookie Policy</p>
+        </div>
+      </div>
+    </div>
+  );
 };
 
 export default Footer;

@@ -14,7 +14,7 @@ const Header = () => {
         <Link href="/blog">Blog</Link>
         <Link href="/contact">Contact</Link>
       </div>
-      <div className="flex items-center bg-gray-100 py-2 pl-4 pr-2 gap-3 text-[14px]">
+      <div className="flex items-center bg-[#F4F4F5] py-2 pl-4 pr-2 gap-3 text-[14px]">
         <input placeholder="Search" className=""></input>
         <img src="/search.svg" className="h-4 w-4" />
       </div>
