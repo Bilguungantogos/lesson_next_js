@@ -7,8 +7,8 @@ import { BsLinkedin } from "react-icons/bs";
 
 const Footer = () => {
   return (
-    <div className="pt-[64px] px-[352px] flex flex-col items-start text-base text-[#3B3C4A] bg-[#F6F6F7] mt-[100px]">
-      <div className="flex gap-5">
+    <div className="bottom-0 pt-[64px]  w-full px-[352px] flex flex-col gap-4 text-base text-[#3B3C4A] bg-[#F6F6F7] mt-[100px]">
+      <div className="flex gap-5 justify-between">
         <div className="w-[289px]">
           <h2 className="font-semibold text-black">About</h2>
           <p className="mb-6 mt-3">
@@ -25,8 +25,8 @@ const Footer = () => {
             456 789
           </p>
         </div>
-        <div className="w-[521px]  flex justify-center">
-          <div className="flex flex-col gap-2">
+        <div className="flex justify-center">
+          <div className=" flex flex-col gap-2">
             <Link href="/">Home</Link>
             <Link href="/blog">Blog</Link>
             <Link href="/contact">Contact</Link>

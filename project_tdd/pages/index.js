@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import Card from "@/components/Card";
 import Link from "next/link";
+import { formatdate } from "@/utils/functions";
 
 export default function Home() {
   const [allblogposts, setAllblogposts] = useState([]);
@@ -21,19 +22,22 @@ export default function Home() {
     setRecentblogposts(data1);
     setIsLoading(false);
   };
-  console.log(recentblogposts);
+  console.log(recentblogposts, "recent");
   return (
     <main className={`container mx-auto`}>
       <section>
-        <Link href={"/blog/"}>
-          {!isLoading && (
-            <div>
-              <h2 className="text-[24px] font-bold mx-8 mb-4 mt-[100px]">
-                Recent blog posts
-              </h2>
-              <div className="flex flex-col ">
-                <div className="flex px-8 gap-8 w-full overflow-hidden">
-                  <div className="w-[50%] ">
+        {!isLoading && (
+          <div>
+            <h2 className="text-[24px] font-bold mx-8 mb-4 mt-[100px]">
+              Recent blog posts
+            </h2>
+            <div className="flex flex-col ">
+              <div className="flex px-8 gap-8 w-full overflow-hidden">
+                <Link
+                  href={"/blog/" + recentblogposts[0].id}
+                  className="w-[50%]"
+                >
+                  <div>
                     <img
                       src={
                         recentblogposts[0].cover_image
@@ -42,16 +46,18 @@ export default function Home() {
                       }
                     />
                     <p className="mt-8 text-[#97989F]">
-                      {recentblogposts[0].created_at}
+                      {formatdate(recentblogposts[0].created_at)}
                     </p>
-                    <h2 className="text-[24px] font-semibold mt-3">
+                    <h2 className="text-[24px] font-semibold mt-3 ">
                       {recentblogposts[0].title}
                     </h2>
                     <p className="text-[16px] mt-3 text-[#667085]">
                       {recentblogposts[0].description}
                     </p>
                   </div>
-                  <div className="w-[50%]">
+                </Link>
+                <div className="w-[50%]">
+                  <Link href={"/blog/" + recentblogposts[1].id}>
                     <div className="flex mb-8 gap-3 h-[50%] ">
                       <img
                         src={
@@ -63,9 +69,9 @@ export default function Home() {
                       />
                       <div>
                         <p className="text-[#97989F]">
-                          {recentblogposts[1].created_at}
+                          {formatdate(recentblogposts[1].created_at)}
                         </p>
-                        <h2 className="text-[18px] font-semibold mt-3">
+                        <h2 className="text-[18px] font-semibold mt-3 truncate">
                           {recentblogposts[1].title}
                         </h2>
                         <p className="text-[16px] text-[#667085]">
@@ -73,6 +79,8 @@ export default function Home() {
                         </p>
                       </div>
                     </div>
+                  </Link>
+                  <Link href={"/blog/" + recentblogposts[2].id}>
                     <div className="flex gap-3 h-[50%]">
                       <img
                         src={recentblogposts[2].cover_image}
@@ -80,7 +88,7 @@ export default function Home() {
                       />
                       <div>
                         <p className="text-[#97989F]">
-                          {recentblogposts[2].created_at}
+                          {formatdate(recentblogposts[2].created_at)}
                         </p>
                         <h2 className="text-[18px] font-semibold mt-3">
                           {recentblogposts[2].title}
@@ -90,16 +98,18 @@ export default function Home() {
                         </p>
                       </div>
                     </div>
-                  </div>
+                  </Link>
                 </div>
-                <div className="flex gap-8 mx-8 my-[30px] mt-[100px] ">
+              </div>
+              <Link href={"/blog/" + recentblogposts[3].id}>
+                <div className="flex gap-8 px-8 my-[30px] mt-[100px] ">
                   <img
                     src={recentblogposts[3].cover_image}
                     className="h-[246px] w-[592px]"
                   />
                   <div>
                     <p className="text-[#97989F]">
-                      {recentblogposts[3].created_at}
+                      {formatdate(recentblogposts[3].created_at)}
                     </p>
                     <h2 className="text-[24px] font-semibold mt-3">
                       {recentblogposts[3].title}
@@ -109,10 +119,10 @@ export default function Home() {
                     </p>
                   </div>
                 </div>
-              </div>
+              </Link>
             </div>
-          )}
-        </Link>
+          </div>
+        )}
         <div className="mt-[100px]">
           <h2 className="text-[24px] font-bold mx-4 mb-8 ">All blog post</h2>
           <div className="grid grid-cols-3 gap-3 mx-4">
@@ -121,6 +131,9 @@ export default function Home() {
                 return <Card blogpost={blogpost} />;
               })}
           </div>
+          <button className="flex py-3 px-5 m-auto mt-8 border-1 rounded-md bg-[#e5e6eb]">
+            Load More
+          </button>
         </div>
       </section>
     </main>
