@@ -14,10 +14,10 @@ const blog = () => {
     setAllblogposts(data);
   };
   return (
-    <div className="container mx-auto">
+    <div className="container mx-auto ">
       <div className="mt-[100px]">
         <h2 className="text-[24px] font-bold mx-4 mb-8 ">All blog post</h2>
-        <div className="grid grid-cols-3 gap-3 mx-4">
+        <div className="lg:grid lg:grid-cols-3 gap-3 mx-4">
           {allblogposts &&
             allblogposts.map((blogpost) => {
               return <Card blogpost={blogpost} />;

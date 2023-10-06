@@ -18,18 +18,18 @@ const BlogDetail = () => {
     getBlogDetail();
   }, []);
   return (
-    <div className="container max-w-4xl bg-slate-400 mx-auto ">
+    <div className="container max-w-4xl mx-auto ">
       {!isLoading && (
         <div>
           <>
             <div>
-              <h1 className="text-4xl font-semibold text-[#181A2A] text-center">
+              <h1 className="text-4xl font-semibold text-[#181A2A]">
                 {blogDetailData?.title}
               </h1>
-              <div className="flex items-center mt-5 gap-5">
-                <div className="flex items-center">
+              <div className="flex items-center mt-5 gap-5 text-[#696A75]">
+                <div className="flex items-center gap-2">
                   <img
-                    className="w-7 h-7 rounded-full"
+                    className="w-7 h-7 rounded-full "
                     src={blogDetailData?.user?.profile_image}
                     alt=""
                   />

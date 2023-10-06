@@ -7,9 +7,9 @@ import { BsLinkedin } from "react-icons/bs";
 
 const Footer = () => {
   return (
-    <div className="bottom-0 pt-[64px]  w-full px-[352px] flex flex-col gap-4 text-base text-[#3B3C4A] bg-[#F6F6F7] mt-[100px]">
-      <div className="flex gap-5 justify-between">
-        <div className="w-[289px]">
+    <div className="bottom-0 pt-[64px] max-lg:pt-[32px]  w-full px-[352px] max-lg:px-[50px] flex flex-col gap-4 text-base text-[#3B3C4A] bg-[#F6F6F7] mt-[100px]  max-lg:text-[14px]">
+      <div className="flex gap-5 lg:justify-between max-lg:justify-between">
+        <div className="w-[289px] max-lg:w-[250px]">
           <h2 className="font-semibold text-black">About</h2>
           <p className="mb-6 mt-3">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -32,7 +32,7 @@ const Footer = () => {
             <Link href="/contact">Contact</Link>
           </div>
         </div>
-        <div className="flex gap-7">
+        <div className="lg:flex lg:gap-7 max-lg:flex max-lg:flex-col max-lg:gap-4 ">
           <BsFacebook />
           <BsInstagram />
           <BsTwitter />
