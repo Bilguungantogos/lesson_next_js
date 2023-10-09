@@ -4,7 +4,7 @@ import { BsFacebook, BsInstagram, BsTwitter, BsLinkedin } from "react-icons/bs";
 
 const Footer = () => {
   return (
-    <div className="bottom-0 pt-[64px] max-lg:pt-[32px]  w-full px-[352px] max-lg:px-[50px] flex flex-col gap-4 text-base text-[#3B3C4A] bg-[#F6F6F7] mt-[100px]  max-lg:text-[14px]">
+    <div className="max-sm:px-4 bottom-0 pt-[64px] max-lg:pt-[32px]  w-full px-[352px] max-lg:px-[50px] flex flex-col gap-4 text-base text-[#3B3C4A] bg-[#F6F6F7] mt-[100px]  max-lg:text-[14px]">
       <div className="flex gap-5 lg:justify-between max-lg:justify-between">
         <div className="w-[289px] max-lg:w-[250px]">
           <h2 className="font-semibold text-black">About</h2>
@@ -37,8 +37,8 @@ const Footer = () => {
         </div>
       </div>
       <p className="w-full bg-[#E8E8EA] h-[2px] mt-[25px]"></p>
-      <div className="flex items-center py-9 gap-16 w-full">
-        <div className="flex gap-2 font-normal w-[350px]">
+      <div className="sm:flex sm-max:justify-center items-center py-9 gap-16 w-full max-sm:text-[12px]">
+        <div className="flex gap-2 font-normal w-[350px] max-sm:justify-center max-sm:mb-5">
           <img src="/logomini.svg" />
           <div>
             <h3 className="flex">
@@ -47,7 +47,7 @@ const Footer = () => {
             <h3>© All Rights Reserved.</h3>
           </div>
         </div>
-        <div className="flex gap-8 w-full justify-end">
+        <div className="flex gap-8 w-full sm:justify-end max-sm:justify-center">
           <p>Terms of Use</p>
           <p>Privacy Policy</p>
           <p>Cookie Policy</p>
