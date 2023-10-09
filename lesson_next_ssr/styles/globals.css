@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.blog-content p {
+  @apply my-4;
+}
+
+.blog-content h2 {
+  @apply text-2xl;
+  @apply font-semibold;
+}
+.blog-content h4 {
+  @apply text-lg;
+}
+.blog-content li {
+  @apply list-none;
+}
+.blog-content ul {
+  @apply list-disc;
+}
+.blog-content ol {
+  @apply list-decimal;
+}
+.blog-content a {
+  @apply flex;
+  @apply justify-center;
+}

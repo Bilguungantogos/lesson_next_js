@@ -1,6 +1,5 @@
 import React from "react";
 import Link from "next/link";
-import { BsFacebook, BsInstagram, BsTwitter, BsLinkedin } from "react-icons/bs";
 
 const Footer = () => {
   return (
@@ -23,18 +22,9 @@ const Footer = () => {
           </p>
         </div>
         <div className="flex justify-center">
-          <div className=" flex flex-col gap-2">
-            <Link href="/">Home</Link>
-            <Link href="/blog">Blog</Link>
-            <Link href="/contact">Contact</Link>
-          </div>
+          <div className=" flex flex-col gap-2"></div>
         </div>
-        <div className="lg:flex lg:gap-7 max-lg:flex max-lg:flex-col max-lg:gap-4 ">
-          <BsFacebook />
-          <BsInstagram />
-          <BsTwitter />
-          <BsLinkedin />
-        </div>
+        <div className="lg:flex lg:gap-7 max-lg:flex max-lg:flex-col max-lg:gap-4 "></div>
       </div>
       <p className="w-full bg-[#E8E8EA] h-[2px] mt-[25px]"></p>
       <div className="flex items-center py-9 gap-16 w-full">
