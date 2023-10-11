@@ -2,6 +2,7 @@ import React from "react";
 import Link from "next/link";
 import { formatdate } from "@/utils/functions";
 import { useEffect, useState } from "react";
+import Image from "next/image";
 
 const Recentblogpost = () => {
   useEffect(() => {
@@ -29,7 +30,10 @@ const Recentblogpost = () => {
                 className="w-[50%]  "
               >
                 <div>
-                  <img
+                  <Image
+                    width={1000}
+                    height={1000}
+                    className="w-full h-full"
                     src={
                       recentblogposts[0].cover_image
                         ? recentblogposts[0].cover_image
@@ -50,7 +54,9 @@ const Recentblogpost = () => {
               <div className="lg:w-[50%] max-lg:mt-5">
                 <Link href={"/blog/" + recentblogposts[1].id}>
                   <div className="lg:flex mb-8 gap-3  h-[50%]">
-                    <img
+                    <Image
+                      width={1000}
+                      height={1000}
                       src={
                         recentblogposts[1].cover_image
                           ? recentblogposts[1].cover_image
@@ -73,7 +79,9 @@ const Recentblogpost = () => {
                 </Link>
                 <Link href={"/blog/" + recentblogposts[2].id}>
                   <div className="lg:flex gap-3 h-[50%]">
-                    <img
+                    <Image
+                      width={1000}
+                      height={1000}
                       src={
                         recentblogposts[2].cover_image
                           ? recentblogposts[2].cover_image
@@ -98,7 +106,9 @@ const Recentblogpost = () => {
             </div>
             <Link href={"/blog/" + recentblogposts[3].id}>
               <div className="lg:flex gap-8 px-8 my-[30px] mt-[100px] ">
-                <img
+                <Image
+                  width={1000}
+                  height={1000}
                   src={recentblogposts[3].cover_image}
                   className="lg:h-[246px] lg:w-[592px]"
                 />

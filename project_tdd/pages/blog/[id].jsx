@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import moment from "moment";
+import Image from "next/image";
 
 const BlogDetail = () => {
   const router = useRouter();
@@ -28,7 +29,9 @@ const BlogDetail = () => {
               </h1>
               <div className="flex items-center mt-5 gap-5 text-[#696A75]">
                 <div className="flex items-center gap-2">
-                  <img
+                  <Image
+                    width={1000}
+                    height={1000}
                     className="w-7 h-7 rounded-full "
                     src={blogDetailData?.user?.profile_image}
                     alt=""

@@ -1,12 +1,15 @@
 import React from "react";
 import Link from "next/link";
 import { formatdate } from "@/utils/functions";
+import Image from "next/image";
 
 const Card = ({ blogpost }) => {
   return (
     <Link href={"/blog/" + blogpost.id}>
       <div className="flex border flex-col p-4 gap-5 ">
-        <img
+        <Image
+          width={1000}
+          height={1000}
           src={blogpost.cover_image ? blogpost.cover_image : "/default.avif"}
           className="h-[240px] object-cover"
         />
