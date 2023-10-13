@@ -4,7 +4,7 @@ import React from "react";
 
 const contact = () => {
   return (
-    <div className="h-[50vh] mb-[400px]">
+    <div className="max-md:h-[100vh] h-[50vh] mb-[400px]">
       <ContactInfo />
       <ContactForm />
     </div>

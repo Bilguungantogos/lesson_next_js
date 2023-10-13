@@ -2,10 +2,10 @@ import React from "react";
 
 const ContactForm = () => {
   return (
-    <div className="w-[643px] gap-[29px] pl-[35px] pt-[29px] pr-[130px] pb-[26px] flex flex-col items-center container mx-auto bg-[#F6F6F7] rounded-xl">
-      <div>
+    <div className="md:w-[643px] md:gap-[29px] md:pl-[35px] md:pt-[29px] md:pr-[130px] md:pb-[26px] flex flex-col items-center container mx-auto bg-[#F6F6F7] rounded-xl">
+      <div className="max-md:flex max-md:flex-col max-md:justify-center max-md:p-5">
         <h3 className="text-[18px] font-semibold mb-6">Leave a Message</h3>
-        <div className="w-[478px]">
+        <div className="md:w-[478px]">
           <div className="flex gap-7">
             <input
               className="pl-4  py-[14px] rounded-md w-[50%]"
@@ -25,7 +25,7 @@ const ContactForm = () => {
             placeholder="Write a message"
           ></textarea>
         </div>
-        <button className="mt-[29px] mb-[28px] px-4 py-3 bg-[#4B6BFB] rounded-[5px] text-[#FFF] text-sm]">
+        <button className="mt-[29px] mb-[28px] px-4 py-3 bg-[#4B6BFB] rounded-[5px] text-[#FFF] text-sm] max-md:w-[150px]">
           Send Message
         </button>
       </div>

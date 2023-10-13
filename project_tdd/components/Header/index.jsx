@@ -10,7 +10,7 @@ const navigations = [
 const Header = () => {
   const isActive = usePathname();
   return (
-    <div className="flex justify-between items-center py-8 px-[350px] mb-24 border bg-[#F6F6F7] max-lg:py-4 max-lg:px-[50px] max-lg:h-[80px] max-sm:px-4">
+    <div className="flex justify-between items-center py-8 px-[350px] mb-24 border bg-[#F6F6F7] max-lg:py-4 max-lg:px-[50px] max-lg:h-[80px] max-sm:px-4 max-sm:hidden">
       <div className="w-[158px] h-[36px] max-lg:w-[90px] max-lg:h-[22px] ">
         <Link href="/">
           <img src="/Logo.png" className="w-full h-full" />

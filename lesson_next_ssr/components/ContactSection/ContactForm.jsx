@@ -2,10 +2,10 @@ import React from "react";
 
 const ContactForm = () => {
   return (
-    <div className="w-[643px] gap-[29px] pl-[35px] pt-[29px] pr-[130px] pb-[26px] flex flex-col items-center container mx-auto bg-[#F6F6F7] rounded-xl">
+    <div className="max-sm:w-[100px] w-[643px] gap-[29px] pl-[35px] pt-[29px] pr-[130px] pb-[26px] flex flex-col items-center container mx-auto bg-[#F6F6F7] rounded-xl">
       <div>
         <h3 className="text-[18px] font-semibold mb-6">Leave a Message</h3>
-        <div className="w-[478px]">
+        <div className=" w-[478px]">
           <div className="flex gap-7">
             <input
               className="pl-4  py-[14px] rounded-md w-[50%]"

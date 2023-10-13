@@ -32,11 +32,3 @@ export async function getServerSideProps() {
     props: { blogs },
   };
 }
-
-// export async function getStaticProps() {
-//   const res = await fetch(`https://dev.to/api/articles?per_page=9`);
-//   const blogs = await res.json();
-//   return {
-//     props: { blogs },
-//   };
-// }
