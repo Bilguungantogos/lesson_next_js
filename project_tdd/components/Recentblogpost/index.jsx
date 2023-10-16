@@ -16,6 +16,7 @@ const Recentblogpost = () => {
     setRecentblogposts(data1);
     setIsLoading(false);
   };
+
   return (
     <div>
       {!isLoading && (
@@ -133,3 +134,12 @@ const Recentblogpost = () => {
 };
 
 export default Recentblogpost;
+
+export async function getServerSideProps() {
+  const res = await fetch(`https://dev.to/api/articles/latest?per_page=4`);
+  const blogs = await res.json();
+  console.log("SERVER SIDE WORKING");
+  return {
+    props: { blogs },
+  };
+}

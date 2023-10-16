@@ -18,7 +18,7 @@ const Card = ({ blogpost }) => {
         </div>
         <div className="flex items-center gap-2 text-[#97989F]">
           <img
-            src={blogpost.user.profile_image}
+            src={blogpost?.user.profile_image}
             className="w-[36px] h-[36px] rounded-full"
           />
           <p>{blogpost.user.name}</p>

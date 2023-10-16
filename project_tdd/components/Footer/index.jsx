@@ -23,10 +23,16 @@ const Footer = () => {
           </p>
         </div>
         <div className="flex justify-center">
-          <div className=" flex flex-col gap-2">
-            <Link href="/">Home</Link>
-            <Link href="/blog">Blog</Link>
-            <Link href="/contact">Contact</Link>
+          <div className=" flex flex-col gap-2 ">
+            <Link className="hover:text-orange-500" href="/">
+              Home
+            </Link>
+            <Link className="hover:text-orange-500" href="/blog">
+              Blog
+            </Link>
+            <Link className="hover:text-orange-500" href="/contact">
+              Contact
+            </Link>
           </div>
         </div>
         <div className="lg:flex lg:gap-7 max-lg:flex max-lg:flex-col max-lg:gap-4 ">

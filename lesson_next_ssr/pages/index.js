@@ -1,6 +1,9 @@
 import Card from "@/components/Card";
+import { useRouter } from "next/router";
 
-export default function Home({ blogs }) {
+export default function Home({ blogs, page }) {
+  const router = useRouter();
+
   return (
     <main className={`container mx-auto`}>
       <section>
@@ -13,7 +16,10 @@ export default function Home({ blogs }) {
               })}
             </div>
             <button
-              onClick={() => {}}
+              onClick={() => {
+                const pg = Number(page) + 3;
+                router.replace("?page=" + pg);
+              }}
               className="flex py-3 px-5 m-auto mt-16 border-1 rounded-md bg-[#e5e6eb] hover:bg-[#f4f5ff]"
             >
               Load More
@@ -24,11 +30,15 @@ export default function Home({ blogs }) {
     </main>
   );
 }
-export async function getServerSideProps() {
-  const res = await fetch(`https://dev.to/api/articles?per_page=9`);
+export async function getServerSideProps(context) {
+  const { page } = context.query;
+  const res = await fetch(`https://dev.to/api/articles?per_page=${page || 9}`);
   const blogs = await res.json();
   console.log("SERVER SIDE WORKING");
   return {
-    props: { blogs },
+    props: {
+      blogs,
+      page,
+    },
   };
 }

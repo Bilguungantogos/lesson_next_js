@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import Card from "@/components/Card";
 import Recentblogpost from "@/components/Recentblogpost";
-import { BsTypeH1 } from "react-icons/bs";
 import Loader from "@/components/Loader";
 
 export default function Home() {
@@ -27,6 +26,7 @@ export default function Home() {
   function handleNext() {
     setPages(pages + 6);
   }
+
   return (
     <main className={`container mx-auto`}>
       <section>
