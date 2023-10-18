@@ -1,40 +1,21 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef } from "react";
 import Card from "@/components/Card";
 import Recentblogpost from "@/components/Recentblogpost";
-import Loader from "@/components/Loader";
+import { useRouter } from "next/router";
 
-export default function Home() {
-  const [allblogposts, setAllblogposts] = useState([]);
-  const [pages, setPages] = useState(9);
-  const [error, setError] = useState("");
-  const [isLoading, setIsLoading] = useState(true);
+export default function Home({ blogs, page }) {
+  const router = useRouter();
+
+  const myRef = useRef(null);
 
   useEffect(() => {
-    fetchData();
-  }, [pages]);
-  const fetchData = async () => {
-    try {
-      const res = await fetch(`https://dev.to/api/articles?per_page=${pages}`);
-      const data = await res.json();
-      setAllblogposts(data);
-    } catch (err) {
-      setError("Алдаа гарлаа дахин оролдоно уу");
-    } finally {
-      setIsLoading(false);
-    }
-  };
-  function handleNext() {
-    setPages(pages + 6);
-  }
+    myRef.current.scrollIntoView({ behavior: "smooth", block: "end" });
+  });
 
   return (
     <main className={`container mx-auto`}>
-      <section>
-        {isLoading && <Loader />}
-        {error && (
-          <h1 className="text-red-700 text-3xl text-center my-10">{error}</h1>
-        )}
-        {!isLoading && !error && (
+      <section ref={myRef}>
+        {
           <>
             <Recentblogpost />
             <div className="mt-[100px]">
@@ -42,21 +23,38 @@ export default function Home() {
                 All blog post
               </h2>
               <div className="lg:grid lg:grid-cols-3 gap-3 mx-4">
-                {allblogposts &&
-                  allblogposts.map((blogpost) => {
-                    return <Card blogpost={blogpost} />;
-                  })}
+                {blogs.map((blogpost, i) => {
+                  return <Card key={i} blogpost={blogpost} />;
+                })}
               </div>
               <button
-                onClick={handleNext}
+                onClick={() => {
+                  console.log("Clicked");
+                  const pg = Number(page) + 3;
+                  router.replace("?page=" + pg);
+                }}
                 className="flex py-3 px-5 m-auto mt-16 border-1 rounded-md bg-[#e5e6eb] hover:bg-[#f4f5ff]"
               >
                 Load More
               </button>
             </div>
           </>
-        )}
+        }
       </section>
     </main>
   );
+}
+
+export async function getServerSideProps(context) {
+  let { page } = context.query;
+  page = page || 9;
+  const res = await fetch(`https://dev.to/api/articles?per_page=${page}`);
+  const blogs = await res.json();
+
+  return {
+    props: {
+      blogs,
+      page,
+    },
+  };
 }
