@@ -1,6 +1,5 @@
 const express = require("express");
 
-const port = 8008;
 const app = express();
 
 app.use(express.json()); //middleware
@@ -27,10 +26,6 @@ app.use(express.json()); //middleware
 //     },
 //   });
 // });
-
-app.listen(port, () => {
-  console.log(`Server is listening at ${port}`);
-});
 
 // JSON.parse(); JSON TO OBJECT
 // JSON.stringify(); OBJECT to JSON
@@ -81,12 +76,35 @@ app.post("/users", (req, res) => {
   users.push(newUser);
   console.log(users);
   const { writeFile } = require("fs");
-  const path = "./data.json";
-  writeFile(path, JSON.stringify(users, null, 2), (error) => {
+  writeFile("./data.json", JSON.stringify({ users }), (error) => {
     if (error) {
       console.log("An error has occurred ", error);
       return;
     }
     console.log("Data written successfully to disk");
   });
+});
+
+//2023.10.25 put delete
+
+const PORT = 8008;
+
+app.get("/", (req, res) => {
+  res.send("Hello Get Method");
+});
+
+app.post("/", (req, res) => {
+  res.send("Hello Post Method");
+});
+
+app.put("/", (req, res) => {
+  res.send("Hello Put Method");
+});
+
+app.delete("/", (req, res) => {
+  res.send("Hello Delete Method");
+});
+
+app.listen(PORT, () => {
+  return console.log(`Server is listening at ${PORT} port`);
 });
