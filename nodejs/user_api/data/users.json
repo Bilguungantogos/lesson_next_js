@@ -1,0 +1,47 @@
+{
+  "data": [
+    {
+      "avatarUrl": "/images/avatar.png",
+      "firstName": "Naraa",
+      "lastName": "Saraa",
+      "email": "email@gmail.com",
+      "birthDate": "2020-10-10",
+      "department": "human resource"
+    },
+    {
+      "avatarUrl": "/images/avatar1.jpg",
+      "firstName": "Saraa",
+      "lastName": "Bataa",
+      "email": "email@gmail.com",
+      "birthDate": "2020-10-10",
+      "department": "technology"
+    },
+    {
+      "id": "dc3ee427-0e8d-4366-9cab-adff28a7f6f8",
+      "avatarUrl": "/images/avatar3.jpg",
+      "firstName": "Urnaa",
+      "lastName": "Amgalan",
+      "email": "admin@gmail.com",
+      "birthDate": "2023-11-03",
+      "department": "technology"
+    },
+    {
+      "id": "53fe4d9b-c7a1-49d2-a24d-07f8b7c5d851",
+      "avatarUrl": "/images/avatar1.jpg",
+      "firstName": "Erdene",
+      "lastName": "Bataa",
+      "email": "bat@gmail.com",
+      "birthDate": "2023-11-01",
+      "department": "marketing"
+    },
+    {
+      "id": "de337ad5-1d15-4369-8f0d-e82b58814779",
+      "avatarUrl": "/images/avatar2.jpg",
+      "firstName": "Sarantuya",
+      "lastName": "Batbaatar",
+      "email": "bataa@gmail.com",
+      "birthDate": "2023-11-09",
+      "department": "finance"
+    }
+  ]
+}
