@@ -1,6 +1,6 @@
 import React from "react";
 
-const TRow = ({ user }, { users }) => {
+const TRow = ({ user, handleUpdate, handleDelete }) => {
   const getDepartment = (department) => {
     switch (department) {
       case "human resource": {
@@ -26,12 +26,6 @@ const TRow = ({ user }, { users }) => {
       }
     }
   };
-
-  const delete1 = (e) => {
-    console.log(user);
-  };
-  const edit = () => {};
-
   return (
     <tr className="hover:bg-slate-100">
       <td>
@@ -57,10 +51,13 @@ const TRow = ({ user }, { users }) => {
       </td>
       <td>{getDepartment(user.department)}</td>
       <td>
-        <button className=" btn btn-warning  mx-2" onClick={edit}>
+        <button
+          className=" btn btn-warning  mx-2"
+          onClick={() => handleUpdate(user.id)}
+        >
           засах
         </button>
-        <button className="  btn btn-error " onClick={delete1}>
+        <button className="btn btn-error" onClick={() => handleDelete(user.id)}>
           устгах
         </button>
       </td>
